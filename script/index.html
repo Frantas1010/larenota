@@ -15,30 +15,47 @@
 
     <!-- Barrita superior titular de la renota -->
     <header>
-      <div class="collapse bg-dark" id="navbarHeader">
+      <div class="collapse bg-dark border border-info" id="navbarHeader">
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
+              <h4 class="text-info">About</h4>
               <p class="text-muted">La re nota es un proyecto creado por 4 monos que tenian de tarea realizar una pagina fachera facherita, entonces se pusieron manos a la obra y a base de bootstrap, css, base de datos, mysql, etc. se creo LaReNota.</p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Integrantes:</h4>
+              <h4 class="text-info">Integrantes:</h4>
               <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Chino galan gomez</a></li>
-                <li><a href="#" class="text-white">juancho loba salvaje</a></li>
-                <li><a href="#" class="text-white">xXFran calapapa69Xx</a></li>
-                <li><a href="#" class="text-white">Joaco el pro 123</a></li>
+                <li><a href="#" class="text-info">Chino galan gomez</a></li>
+                <li><a href="#" class="text-info">juancho loba salvaje</a></li>
+                <li><a href="#" class="text-info">xXFran calapapa69Xx</a></li>
+                <li><a href="#" class="text-info">Joaco el pro 123</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="navbar navbar-dark bg-dark shadow-sm border border-info">
         <div class="container">
           <a href="#" class="navbar-brand d-flex align-items-center">
-            <strong>LaReNota</strong>
+            <strong class="text-info">LaReNota</strong>
           </a>
+          <button type="button" class="btn btn-dark rounded-pill btn-outline-info position-absolute top-100 start-50 translate-middle text-uppercase fw-bold" data-bs-toggle="modal" data-bs-target="#miModal">Crear Nota</button>
+          <div class="modal fade" id="miModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true" aria-labelledby="staticBackdropLabel">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                  <form id="formulario" action="/larenota/script/" method="get">
+                    <input type="text" class="form-control" name="texttitle" id="texttitle" placeholder="Titulo" size="50">
+                    <textarea class="form-control" name="textarea1" id="textarea1" rows="10" placeholder="Texto" size="300"></textarea>
+                    <input style="margin-top: 0.5rem;" name="fecha" id="fecha" type="date">
+                    <button type="button" class="btn btn-secondary" style="margin-top: 0.5rem; margin-left: 7rem;" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" onclick="datos()" class="btn btn-primary" style="margin-top: 0.5rem;">Crear Texto</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -50,11 +67,10 @@
     <main>
       <div class="album py-5 bg-light">
         <div class="container">
-    
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- card -->
             <div class="col-6">
               <div class="card shadow-sm">
-    
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -68,9 +84,9 @@
                 </div>
               </div>
             </div>
+            <!-- card -->
             <div class="col-6">
               <div class="card shadow-sm">
-    
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -84,10 +100,12 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>    
     </main>
 
+    <script src="scri.js"></script>
   </body>
 </html>

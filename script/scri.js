@@ -1,12 +1,11 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const ruta = __dirname + "./index.html";
 const bodyparser = require("body-parser");
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
-var mysql = require("mysql");
 
+var mysql = require("mysql");
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -16,9 +15,10 @@ var con = mysql.createConnection({
 
 con.connect();
 
-con.query("SELECT * FROM notas", function (err, res) {
+con.query(datos(), function (err, res) {
     if (err) throw err;
-    console.log(res);
+    console.log("1 record inserted");
+    //alert("su texto se creó con exito!");
 });
 
 con.end();
@@ -26,3 +26,18 @@ con.end();
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
 });
+
+function datos(){ 
+    app.get('/larenota/script/', function (req, res) {
+        var titulo = req.query.texttitle || '';	
+    });
+    var titulo = "";//document.getElementById("texttitle").value;
+    var texto = "";//document.getElementById("textarea1").value;
+    var fecha = "";//document.getElementById("fecha").value;
+    console.log(titulo);
+    console.log(texto);
+    console.log(fecha);
+    var sql = "INSERT INTO notas (titulo, descripcion, fecha) VALUES ('"+ titulo +"', '"+ texto +"', '"+ fecha +"')";
+    console.log(sql);
+    return(sql)
+}
