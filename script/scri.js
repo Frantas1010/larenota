@@ -28,12 +28,12 @@ app.listen(port, () => {
 });
 
 function datos(){ 
-    app.get('/larenota/script/', function (req, res) {
-        var titulo = req.query.texttitle || '';	
-    });
-    var titulo = "";//document.getElementById("texttitle").value;
-    var texto = "";//document.getElementById("textarea1").value;
-    var fecha = "";//document.getElementById("fecha").value;
+    //app.get('/larenota/script/', function (req, res) {
+    //    var titulo = req.query.texttitle || '';	
+    //});
+    var titulo = document.getElementById("texttitle").value;
+    var texto = document.getElementById("textarea1").value;
+    var fecha = document.getElementById("fecha").value;
     console.log(titulo);
     console.log(texto);
     console.log(fecha);
